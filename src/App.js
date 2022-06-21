@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import './App.css';
+import {actions} from './Store/index'
 
 function App() {
 
@@ -7,14 +8,14 @@ const counter = useSelector((state) => state.counter)
 
 const dispatch = useDispatch()
 const Increment = () => {
-  dispatch({type:"INC"})
+  dispatch(actions.Increment())
 }
 const Decrement = () => {
-  dispatch({type:"DEC"})
+  dispatch(actions.Decrement())
 }
 
 const addBy = () =>{
-  dispatch({type:'ADD', payload:10 })
+  dispatch(actions.addBy(10))
 }
 
   return (
